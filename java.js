@@ -17,9 +17,15 @@ function vaihdaYksikko() {
   }
 }
 
+function haeDesimaaliMaara() {
+  const valittu = document.querySelector('input[name="desimaali"]:checked');
+  return parseInt(valittu.value, 10);
+}
+
 function muunna() {
   const arvo = parseFloat(document.getElementById("input").value);
   const tulos = document.getElementById("tulos");
+  const tarkkuus = haeDesimaaliMaara();
 
   if (isNaN(arvo)) {
     tulos.textContent = "Syötä kelvollinen luku!";
@@ -29,9 +35,9 @@ function muunna() {
   let muunnettu;
   if (suunta === "CtoF") {
     muunnettu = arvo * 9/5 + 32;
-    tulos.textContent = `${arvo} °C = ${muunnettu.toFixed(1)} °F`;
+    tulos.textContent = `${arvo} °C = ${muunnettu.toFixed(tarkkuus)} °F`;
   } else {
     muunnettu = (arvo - 32) * 5/9;
-    tulos.textContent = `${arvo} °F = ${muunnettu.toFixed(1)} °C`;
+    tulos.textContent = `${arvo} °F = ${muunnettu.toFixed(tarkkuus)} °C`;
   }
 }
