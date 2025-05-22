@@ -19,10 +19,20 @@ button {
   margin-top: 1rem;
 }
 
-input {
+input[type="number"] {
   padding: 0.5rem;
   width: 200px;
   margin-right: 0.5rem;
+}
+
+.desimaalit {
+  margin-top: 1rem;
+}
+
+.desimaalit label {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.95rem;
 }
 
 #tulos {
